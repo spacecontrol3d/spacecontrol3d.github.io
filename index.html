@@ -1,1 +1,195 @@
-SpaceControl
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>SpaceControl</title>
+  <meta charset="utf-8">
+  <meta name="description" content="SpaceControl">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="assets/images/chart-bubble.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/index.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://chen-geng.com/rose4d/static/js/bulma-carousel.min.js"></script>
+  <script src="https://chen-geng.com/rose4d/static/js/bulma-slider.min.js"></script>
+  <script src="https://chen-geng.com/rose4d/static/js/index.js"></script>
+  <script src="https://chen-geng.com/rose4d/static/js/select.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  
+  <script type="module" src="https://cdn.jsdelivr.net/npm/fflate@0.8.1/esm/index.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+
+<body>
+  <div class="scroll-container">
+
+    <div class="section-nav">
+      <a href="#cover" class="dot active" title="Cover"></a>
+      <a href="#intro" class="dot" title="Introduction"></a>
+      <a href="#inter" class="dot" title="Interactive Results"></a>
+      <a href="#approach" class="dot" title="Approach"></a>
+      <a href="#miscellaneous" class="dot" title="Miscellaneous"></a>
+    </div>
+
+    <!-- For PC and desktop devices -->
+    <div class="section hero is-link is-fullheight video" style="overflow: hidden; position:relative; background-color: black;" id="cover">
+
+      <div class="hero-video" style="
+       height: 100%;
+       width: 100%;
+       background-color: black;">
+        <video playsinline autoplay muted loop>
+          <source src="assets/videos/teaser_video_slide.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="overlay"></div>
+
+      <div id="top-bar" class="hero-head is-hidden-touch" style="position: fixed; top: 0; right: 0; z-index: 1000;">
+        <header class="navbar is-hidden-touch">
+          <div class="container is-size-5" style="margin-right:10px;">
+            <div class="navbar-menu">
+              <div class="navbar-end">
+
+                <a class="navbar-item pl-4 pr-4" href="assets/spacecontrol.pdf" style="font-size: 1.4vw;">
+                  <i class="ti ti-file" style="margin-right: 0.3vw;"></i>
+                  <span class="myfont">Paper</span>
+                </a>
+
+                <!-- <a class="navbar-item pl-4 pr-4" href="#" style="font-size: 1.4vw;">
+                  <i class="ti ti-code" style="margin-right: 0.3vw;;"></i>
+                  <span class="myfont">Code</span>
+                </a> -->
+
+                <a class="navbar-item pl-4 pr-4" href="assets/videos/teaser_video_slide.mp4" style="font-size: 1.4vw;">
+                  <i class="ti ti-video" style="margin-right: 0.3vw;"></i>
+                  <span class="myfont">Video</span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="hero-body" style="max-width: 100%; width: 100%;">
+        <div class="container has-text-centered" style="max-width: 100%; width: 100%;">
+          <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 7vw; line-height: 1.1; text-align: center; width: 100%; max-width: 100%;">
+            <div style="display: inline-block;">
+              <i id="changing-icon" class="myfont"></i>
+              <span style="
+                background: linear-gradient(90deg, #ff6ec4, #7873f5);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                display: inline-block;
+                padding-bottom: 0.1em;">
+                SpaceControl
+              </span><br>
+              <span>Introducing Test-Time Spatial Control to 3D Generative Modeling</span>
+            </div>
+          </h1>
+
+          <!-- <h1 class="subtitle is-1 is-size-4-mobile publication-title myfont" style="padding-top: 10vh; font-size: 2.5vw;">
+          </h1> -->
+          <h1 class="is-2 is-size-4-mobile" style="font-size: 2.5vw; opacity: 100%;">
+            <span class="myfont">
+              <a href="https://elisabettafedele.github.io/">Elisabetta Fedele<sup class="is-size-6-mobile">*, 1, 2</sup></a>, 
+            </span> 
+            <span class="myfont">
+              <a href="https://francisengelmann.github.io/">Francis Engelmann<sup class="is-size-6-mobile">*, 2</sup></a>, 
+            </span> 
+            <span class="myfont">
+              <a href="https://ianhuang.ai/">Ian Huang<sup class="is-size-6-mobile">2</sup></a>, 
+            </span><br />
+            <span class="myfont">
+              <a href="https://orlitany.github.io/">Or Litany<sup class="is-size-6-mobile">3</sup></a>,
+            </span>
+            <span class="myfont">
+              <a href="https://profiles.stanford.edu/leonidas-guibas">Marc Pollefeys<sup class="is-size-6-mobile">1</sup></a>
+            </span>
+            <span class="myfont">
+              <a href="https://profiles.stanford.edu/leonidas-guibas">Leonidas Guibas<sup class="is-size-6-mobile">2</sup></a>
+            </span>
+          </h1>
+          <br />
+          <h1 class="is-5 is-size-5-mobile myfont" style="font-size: 2vw; opacity: 100%;">
+            <sup class="is-size-6-mobile">1</sup>ETH Zurich,
+            <sup class="is-size-6-mobile">2</sup>Stanford University
+            <sup class="is-size-6-mobile">3</sup>Technion
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section is-medium myfont" id="intro">
+      <div
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
+        <div class="container">
+          <h1 class="title is-size-1-mobile text-white" style="font-size: 3vw;">
+            Introduction
+          </h1>
+        </div>
+      </div>
+
+      <br>
+
+  <div class="content" style="width: 80%; text-align: justify; margin: 0 auto;">
+        Generative methods for 3D assets have recently achieved remarkable progress,
+        yet providing intuitive and precise control over the object geometry remains a key challenge.
+        Existing approaches predominantly rely on text or image prompts, which often fall short in geometric specificity:
+        language can be ambiguous, and images are cumbersome to edit. In this work, we introduce SpaceControl, a training-free
+        test-time method for explicit spatial control of 3D generation. Our approach accepts diverse geometric inputs,
+        from coarse primitives to detailed meshes, and conditions a powerful pre-trained generative model without additional training.
+        A controllable parameter lets users trade off between geometric fidelity and output realism. Extensive quantitative evaluation
+        and user studies demonstrate that SpaceControl outperforms both training-based and optimization-based baselines in geometric faithfulness
+        while preserving high visual quality. Finally, we present an interactive user interface that enables online editing
+        of superquadrics for direct conversion into textured 3D assets, facilitating practical deployment in creative workflows.
+      </div>
+    </div>
+
+
+    <div class="section is-medium myfont" id="intro">
+      <div
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
+        <div class="container">
+          <h1 class="title is-size-1-mobile text-white" style="font-size: 3vw;">
+            Controlled 3D Object Generation
+          </h1>
+        </div>
+      </div>
+
+      <br>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <pre class="" style="
+              margin: 0;
+              background: transparent;
+            background-color: #1e1e1e;
+              border-radius: 12px;
+            "><code style="color: #e0e0e0; background: transparent;">@InProceedings{Bieri2025HouseLayout3D,
+  author    = {Fedele, Elisabetta and Engelmann, Francis and Huang, Ian and Litany, Or and Pollefeys, Marc and Guibas, Leonidas},
+  title     = {SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling},
+  booktitle = {arxiv},
+  year      = {2025}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
